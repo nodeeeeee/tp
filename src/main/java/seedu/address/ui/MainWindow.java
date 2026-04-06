@@ -139,7 +139,8 @@ public class MainWindow extends UiPart<Stage> {
             }
         }, text -> commandBox.setCommandTextField(text),
                 index -> handlePicUpload(Index.fromOneBased(index)),
-                person -> contactDetailPanel.updatePerson(person));
+                person -> contactDetailPanel.updatePerson(person,
+                        logic.getDisplayedPersonList().indexOf(person) + 1));
 
         personListPanelPlaceholder.getChildren().add(personListPanel.getRoot());
 
